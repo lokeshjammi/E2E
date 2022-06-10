@@ -6,7 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class RegisterPageObjects {
 
-    WebDriver driver;
+    public WebDriver driver;
+
+    public RegisterPageObjects(WebDriver driver) {
+        this.driver = driver;
+    }
+
     By fullNamePath = By.xpath("//input[@id='user_name']");
     public WebElement getFullName(){
         return driver.findElement(fullNamePath);
