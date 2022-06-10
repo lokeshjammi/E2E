@@ -13,16 +13,12 @@ import java.util.concurrent.TimeUnit;
 public class base {
 
     public WebDriver driver;
+    public Properties prop;
     public WebDriver initializeDrivers() throws IOException {
-        Properties prop = new Properties();
+        prop = new Properties();
         String os = prop.getProperty("OS");
-        if (os.equalsIgnoreCase("Ubuntu")) {
-            FileInputStream fis = new FileInputStream("/media/lokeshjammi-pc/New Volume1/IntelliJ_Workspace/E2E/src/main/java/Academy/resource/data.properties");
-            prop.load(fis);
-        } else {
-            FileInputStream fis = new FileInputStream("D:\\IntelliJ_Workspace\\E2EProject\\src\\main\\java\\Academy\\resource\\data.properties");
-            prop.load(fis);
-        }
+        FileInputStream fis = new FileInputStream("/media/lokeshjammi-pc/New Volume1/IntelliJ_Workspace/E2E/src/main/java/Academy/resource/data.properties");
+        prop.load(fis);
         String browser = prop.getProperty("browser");
         if (os.equalsIgnoreCase("Ubuntu")){
             if (browser.equalsIgnoreCase("Chrome")){
@@ -55,5 +51,4 @@ public class base {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return driver;
     }
-
 }

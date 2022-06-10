@@ -1,12 +1,18 @@
 package HomePage;
 
 import Academy.PageObject.RegisterPageObjects;
+import org.openqa.selenium.WebDriver;
 
 public class RegisterPage {
 
+    public WebDriver driver;
+    public RegisterPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public void registerFunctionality() throws InterruptedException {
 
-        RegisterPageObjects registerPageObjects = new RegisterPageObjects();
+        RegisterPageObjects registerPageObjects = new RegisterPageObjects(driver);
         //Send value to Full Name field
         registerPageObjects.getFullName().sendKeys("LokeshJammi");
         //Send value to email field
