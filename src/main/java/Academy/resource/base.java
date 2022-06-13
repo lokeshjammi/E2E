@@ -14,11 +14,17 @@ public class base {
 
     public WebDriver driver;
     public Properties prop;
+    public FileInputStream fis;
     public WebDriver initializeDrivers() throws IOException {
         prop = new Properties();
-        String os = prop.getProperty("OS");
-        FileInputStream fis = new FileInputStream("/media/lokeshjammi-pc/New Volume1/IntelliJ_Workspace/E2E/src/main/java/Academy/resource/data.properties");
+        try {
+            fis = new FileInputStream("D:\\IntelliJ_Workspace\\E2EProject\\src\\main\\java\\Academy\\resource\\data.properties");
+        } catch (Exception e){
+            fis = new FileInputStream("/media/lokeshjammi-pc/New Volume1/IntelliJ_Workspace/E2E/src/main/java/Academy/resource/data.properties");
+            System.out.println(e);
+        }
         prop.load(fis);
+        String os = prop.getProperty("OS");
         String browser = prop.getProperty("browser");
         if (os.equalsIgnoreCase("Ubuntu")){
             if (browser.equalsIgnoreCase("Chrome")){
