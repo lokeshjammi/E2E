@@ -1,10 +1,14 @@
 package Academy.resource;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -50,5 +54,12 @@ public class base {
         }
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return driver;
+    }
+
+    public void getScreenshotPath(String methodName) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String destinationFile = System.getProperty("user.dir")+"\\reports\\"+methodName+".png";
+        FileUtils.copyFile(source, new File(destinationFile));
     }
 }
