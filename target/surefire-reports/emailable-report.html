@@ -9,18 +9,31 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Practice Suite</th></tr>
-<tr><td><a href="#t0">Test Basics 1</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">70</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test Basics 1</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">29,607</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Practice Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test Basics 1 &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">HomePage.HomePage</td><td><a href="#m0">initialization</a></td><td rowspan="1">1655098870407</td><td rowspan="1">18</td></tr><tr><th colspan="4">Test Basics 1 &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">HomePage.HomePage</td><td><a href="#m1">tearDown</a></td><td rowspan="1">1655098870462</td><td rowspan="1">0</td></tr><tr><th colspan="4">Test Basics 1 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">HomePage.HomePage</td><td><a href="#m2">basePageNavigation</a></td><td rowspan="1">1655098870458</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Practice Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test Basics 1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">HomePage.HomePage</td><td><a href="#m0">basePageNavigation</a></td><td rowspan="1">1655206571493</td><td rowspan="1">15820</td></tr></tbody>
 </table>
-<h2>Test Basics 1</h2><h3 id="m0">HomePage.HomePage#initialization</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at Academy.resource.base.initializeDrivers(base.java:23)
-	at HomePage.HomePage.initialization(HomePage.java:15)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">HomePage.HomePage#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">HomePage.HomePage#basePageNavigation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at Academy.resource.base.initializeDrivers(base.java:23)
-	at HomePage.HomePage.initialization(HomePage.java:15)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test Basics 1</h2><h3 id="m0">HomePage.HomePage#basePageNavigation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: MicrosoftEdge=102.0.1245.39)
+Build info: version: &apos;4.2.0&apos;, revision: &apos;86eb611648&apos;
+System info: host: &apos;lokeshjammi-pc&apos;, ip: &apos;192.168.1.9&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.15.0-37-generic&apos;, java.version: &apos;11.0.15&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [4e698b02843f70c685a07d819e71bff2, clickElement {id=b6dd8a65-db85-4c0c-b092-1f1c7c28f9b1}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 102.0.1245.39, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:41965}, msedge: {msedgedriverVersion: 102.0.1245.33 (41285f1c5672..., userDataDir: /tmp/.com.microsoft.Edge.OJ...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:41965/devtoo..., se:cdpVersion: 102.0.1245.39, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: msedge on LINUX (4e698b02843f70c685a07d819e71bff2)] -&gt; xpath: //input[@id=&apos;allow_marketing_emails&apos;]]
+Session ID: 4e698b02843f70c685a07d819e71bff2
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:566)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at HomePage.RegisterPage.registerFunctionality(RegisterPage.java:23)
+	at HomePage.HomePage.basePageNavigation(HomePage.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

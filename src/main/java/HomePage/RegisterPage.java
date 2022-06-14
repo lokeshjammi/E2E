@@ -19,9 +19,9 @@ public class RegisterPage {
         registerPageObjects.getEmailPath().sendKeys("jammilokesh3@gmail.com");
         //Send value to password field
         registerPageObjects.getPasswordPath().sendKeys("Qaclick@525531");
-        Thread.sleep(5);
+        //Click agree checkbox
         registerPageObjects.getCheckboxPath().click();
-        Thread.sleep(5);
+        //Click on Signup button
         registerPageObjects.getSignupButtonPath().click();
     }
 }
