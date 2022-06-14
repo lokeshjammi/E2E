@@ -8,14 +8,14 @@ public class LandingPageObjects {
 
     public WebDriver driver;
 
-    By signIn = By.xpath("//span[text()='Register']");
+    By register = By.xpath("//div[@class='login-btn']");
 
     public LandingPageObjects(WebDriver driver) {
         this.driver = driver;
     }
 
     public WebElement register(){
-        WebElement registerLink = driver.findElement(signIn);
+        WebElement registerLink = driver.findElement(register);
         return registerLink;
     }
 
