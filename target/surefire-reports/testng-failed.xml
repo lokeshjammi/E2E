@@ -6,8 +6,8 @@
       <class name="HomePage.HomePage">
         <methods>
           <include name="tearDown"/>
-          <include name="initialization"/>
           <include name="basePageNavigation"/>
+          <include name="initialization"/>
         </methods>
       </class> <!-- HomePage.HomePage -->
     </classes>

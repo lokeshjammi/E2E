@@ -10,7 +10,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -23,9 +26,12 @@ public class base {
         prop = new Properties();
         try {
             fis = new FileInputStream("D:\\IntelliJ_Workspace\\E2EProject\\src\\main\\java\\Academy\\resource\\data.properties");
-        } catch (Exception e){
-            fis = new FileInputStream("/media/lokeshjammi-pc/New Volume1/IntelliJ_Workspace/E2E/src/main/java/Academy/resource/data.properties");
+        } catch (FileNotFoundException e){
             System.out.println(e);
+            Path currentRelativePath = Paths.get("");
+            String s = currentRelativePath.toAbsolutePath().toString();
+            System.out.println(s);
+            fis = new FileInputStream(s+"/src/main/java/Academy/resource/data.properties");
         }
         prop.load(fis);
         String os = prop.getProperty("OS");
@@ -39,7 +45,9 @@ public class base {
                 System.setProperty("webdriver.chrome.driver", "D:\\Drivers\\chrome.exe");
                 driver = new ChromeDriver();
             } else if (browser.equalsIgnoreCase("Edge")) {
-                System.setProperty("webdriver.edge.driver", "D:\\Drivers\\Edge\\msedgedriver.exe");
+                Path currentRelativePath = Paths.get("");
+                String s = currentRelativePath.toAbsolutePath().toString();
+                System.setProperty("webdriver.edge.driver", s+"/src/main/java/Academy/resource/drivers/Edge/Ubuntu/msedgedriver");
                 driver = new EdgeDriver();
             } else {
                 System.out.println("Enter Proper Browser");
