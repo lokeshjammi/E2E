@@ -27,7 +27,7 @@ public class RegisterPageObjects {
         return driver.findElement(passwordPath);
     }
 
-    By agreeCheckboxPath = By.xpath("//input[@id='allow_marketing_emails']");
+    By agreeCheckboxPath = By.xpath("//input[@type='checkbox']");
     public WebElement getCheckboxPath(){
         return driver.findElement(agreeCheckboxPath);
     }
